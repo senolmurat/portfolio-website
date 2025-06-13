@@ -1,0 +1,116 @@
+ /* Custom CSS for animations and effects */
+ .nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--tw-color-primary, defaultPrimaryColor);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.skill-bar {
+    transition: width 1.5s ease-in-out;
+}
+
+.timeline-item,
+.timeline-item.education {
+    position: relative;
+    margin-left: -31px;
+}
+.timeline-item::before,
+.timeline-item.education::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: -30px;
+    top: 0;
+    background-color: var(--tw-color-primary, defaultPrimaryColor);
+    border: 3px solid white;
+    z-index: 10;
+}
+.timeline {
+    position: relative;
+    /* Remove overflow: hidden if present */
+    overflow: visible !important;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animated fade-in */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.to-secondary {
+    --tw-gradient-to: var(--tw-color-secondary, defaultSecondaryColor)
+}
+
+.skeleton-indicator-services sl-skeleton {
+    width: 100%;
+    height: 24rem;
+    --border-radius: var(--sl-border-radius-medium);
+}
+
+.skeleton-indicator-tools sl-skeleton {
+    width: 100%;
+    height: 8rem;
+    --border-radius: var(--sl-border-radius-large);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: -20px; /* Centered under the circles */
+    top: 0;
+    background-color: var(--tw-color-primary, #3b82f6);
+    z-index: 1;
+}
+
+@media (max-width: 640px) {
+    .timeline {
+        padding-left: 0 !important;
+    }
+    .timeline-item,
+    .timeline-item.education {
+        margin-left: 0 !important;
+    }
+    .timeline-item::before,
+    .timeline-item.education::before {
+        left: -10px !important;
+    }
+    .timeline::before {
+        left: 0 !important;
+    }
+}

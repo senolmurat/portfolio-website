@@ -1,23 +1,557 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="generator" content="GitLab Pages">
-    <title>Plain HTML site using GitLab Pages</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="navbar">
-      <a href="https://pages.gitlab.io/plain-html/">Plain HTML Example</a>
-      <a href="https://gitlab.com/pages/plain-html/">Repository</a>
-      <a href="https://gitlab.com/pages/">Other Examples</a>
-    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Favicon will be set dynamically by JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/colors.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/alert/alert.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/skeleton/skeleton.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary profile-endpoint"></div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-primary" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2">
+                <ul class="flex flex-col space-y-3">
+                    <li><a href="#home" class="nav-link block py-2 active">Home</a></li>
+                    <li><a href="#about" class="nav-link block py-2">About</a></li>
+                    <li><a href="#skills" class="nav-link block py-2">Skills</a></li>
+                    <li><a href="#experience" class="nav-link block py-2">Experience</a></li>
+                    <li><a href="#projects" class="nav-link block py-2">Projects</a></li>
+                    <li><a href="#contact" class="nav-link block py-2">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
-    <h1>Hello World!</h1>
+    <!-- Main Content with Smooth Scroll Sections -->
+    <main>
+        <div id="alert-container" class="fixed top-4 md:top-20 right-4 left-4 md:left-auto z-[105] w-auto md:w-96 max-w-full flex justify-center md:justify-end pointer-events-none">
+            <div id="form-success" class="hidden w-full md:w-auto">
+                <sl-alert variant="success" duration="3000" open closable class="alert-closable pointer-events-auto">
+                    <sl-icon slot="icon" name="check2-circle"></sl-icon>
+                    Thank you! Your message has been sent.
+                </sl-alert>
+            </div>
+        </div>
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center bg-gradient-to-r from-primary to-secondary">
+            <div class="container mx-auto px-4 pt-4 pb-16 relative z-10">
+                <div id="home-info" class="flex flex-col md:flex-row items-center justify-between w-full">
+                    <div id="home-text" class="md:w-1/2 mb-8 md:mb-0 fade-in-section">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Hi, I'm <span class="text-blue-200 profile-name"><sl-skeleton style="width: 40%" effect="pulse"></sl-skeleton></span></h1>
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-blue-100 profile-title"><sl-skeleton style="width: 60%" effect="pulse"></sl-skeleton></h2>
+                        <p id="home-description" class="text-lg mb-8 text-blue-50 leading-relaxed">
+                            <sl-skeleton class="pb-4" effect="pulse"></sl-skeleton>
+                            <sl-skeleton class="pb-4" effect="pulse"></sl-skeleton>
+                            <sl-skeleton class="w-1/2" effect="pulse"></sl-skeleton>
+                        </p>
+                        <div id="home-buttons" class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-white hover:bg-blue-50 text-primary px-6 py-3 rounded-lg font-medium transition duration-300 shadow-lg">Hire Me</a>
+                            <a href="#" class="border border-white text-white hover:bg-white/10 px-6 py-3 rounded-lg font-medium transition duration-300">
+                                <i class="fas fa-download mr-2"></i>Download CV
+                            </a>
+                        </div>
+                    </div>
+                    <div id="profile-image" class="pb-8 md:w-1/2 flex justify-center fade-in-section">
+                        <div class="relative">
+                            <div class="relative z-10">
+                                <img src="" 
+                                    alt="Person" 
+                                    class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-xl border-4 border-white">
+                            </div>
+                            <div id="home-icon" class="absolute -bottom-4 -right-4 bg-white p-4 rounded-full shadow-lg animate-bounce">
+                                <i class="fas fa-code text-primary text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Background shapes -->
+            <div id="background-shapes" class="absolute inset-0 z-0 overflow-hidden opacity-10">
+                <div class="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-white"></div>
+                <div class="absolute top-1/4 right-10 w-64 h-64 bg-white rotate-45"></div>
+                <div class="absolute bottom-20 left-1/3 w-48 h-48 bg-white rounded-full"></div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <a href="#about" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce hidden md:block z-[50]">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </section>
 
-    <p>
-      This is a simple plain-HTML website on GitLab Pages, without any fancy static site generator.
-    </p>
-  </body>
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4">About <span class="text-primary">Me</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                        <sl-skeleton effect="pulse"></sl-skeleton>
+                    </p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/3 flex justify-center fade-in-section">
+                        <div class="relative">
+                                <div id="profile-image" class="border-4 border-primary p-1 rounded-xl">
+                                    <img src="" 
+                                     alt="Person" 
+                                     class="rounded-xl object-cover shadow-lg w-full h-auto">
+                                </div>
+                            <div class="absolute -bottom-4 -right-4 bg-primary text-white px-4 py-2 rounded-lg shadow-lg">
+                                <i class="fas fa-star mr-2"></i><span class="profile-years"></span>+ Years Exp
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 fade-in-section">
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800">Who am I?</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            <sl-skeleton class="pb-4" effect="pulse"></sl-skeleton>
+                            <sl-skeleton class="pb-4" effect="pulse"></sl-skeleton>
+                            <sl-skeleton class="w-1/3" effect="pulse"></sl-skeleton>
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <p class="mb-3"><span class="font-medium text-gray-800">Name:</span> <span class="profile-name"><sl-skeleton effect="pulse"></sl-skeleton></span></p>
+                                <p class="mb-3"><span class="font-medium text-gray-800">Email:</span> <span class="profile-email"><sl-skeleton effect="pulse"></sl-skeleton></span></p>
+                                <p class="mb-3"><span class="font-medium text-gray-800">Location:</span> <span class="profile-location"><sl-skeleton effect="pulse"></sl-skeleton></span></p>
+                            </div>
+                            <div>
+                                <p class="mb-3"><span class="font-medium text-gray-800">Freelance:</span> Available</p>
+                                <p class="mb-3"><span class="font-medium text-gray-800">Languages:</span> <span class="profile-languages"><sl-skeleton effect="pulse"></sl-skeleton></span></p>
+                                <p class="mb-3"><span class="font-medium text-gray-800">Degree:</span> <span class="profile-degree"><sl-skeleton effect="pulse"></sl-skeleton></span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" target="_blank" class="profile-github social-link bg-gray-100 hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                            <a href="#" target="_blank" class="profile-linkedin social-link bg-gray-100 hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                                <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                            </a>
+                            <a href="#" target="_blank" class="profile-twitter social-link bg-gray-100 hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                                <i class="fab fa-twitter mr-2"></i> Twitter
+                            </a>
+                            <a href="#" target="_blank" class="profile-instagram social-link bg-gray-100 hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <a href="#" class="profile-dribbble social-link bg-gray-100 hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                                <i class="fab fa-dribbble mr-2"></i> Dribbble
+                            </a>
+                            <a href="#" class="profile-behance social-link bg-gray-100 hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                                <i class="fab fa-behance mr-2"></i> Behance
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="services-section" class="mt-20 fade-in-section">
+                    <h3 class="text-2xl font-semibold mb-8 text-center">My <span class="text-primary">Services</span></h3>
+                    
+                    <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Services will be dynamically populated here -->
+                        <div class="skeleton-indicator-services">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                        <div class="skeleton-indicator-services">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                        <div class="skeleton-indicator-services">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4">My <span class="text-primary">Skills</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                        Technologies and abilities I've mastered to build powerful web applications.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                    <div class="bg-white p-8 rounded-xl shadow-sm fade-in-section">
+                        <h3 class="text-xl font-semibold mb-6">Technical Skills</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-sm fade-in-section">
+                        <h3 class="text-xl font-semibold mb-6">Professional Skills</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-section">
+                    <h3 class="text-2xl font-semibold mb-8 text-center">Tools & <span class="text-primary">Technologies</span></h3>
+                    
+                    <div id="tools-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-4xl mx-auto">
+                        <div class="skeleton-indicator-tools">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                        <div class="skeleton-indicator-tools">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                        <div class="skeleton-indicator-tools">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                        <div class="skeleton-indicator-tools">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                        <div class="skeleton-indicator-tools">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                        <div class="skeleton-indicator-tools">
+                            <sl-skeleton effect="pulse"></sl-skeleton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4">Work <span class="text-primary">Experience</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                        My professional journey through the years and valuable lessons learned.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/2 fade-in-section">
+                        <h3 class="text-2xl font-semibold mb-8">Career <span class="text-primary">Timeline</span></h3>
+                        
+                        <div id="career-timeline" class="relative pl-8 timeline">
+                            <!-- Career timeline content will be dynamically populated here -->
+                            <div class="skeleton-indicator-services">
+                                <sl-skeleton effect="pulse"></sl-skeleton>
+                            </div>
+                            <br>
+                            <div class="skeleton-indicator-services">
+                                <sl-skeleton effect="pulse"></sl-skeleton>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 fade-in-section">
+                        <h3 class="text-2xl font-semibold mb-8">Education <span class="text-primary">Timeline</span></h3>
+                        
+                        <div id="education-timeline" class="px-1 relative pl-8 timeline">
+                            <div class="skeleton-indicator-services">
+                                <sl-skeleton effect="pulse"></sl-skeleton>
+                            </div>
+                            <br>
+                            <div class="skeleton-indicator-services">
+                                <sl-skeleton effect="pulse"></sl-skeleton>
+                            </div>
+
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-8">Courses &<span class="text-primary"> Certifications</span></h3>
+                        <!-- Education timeline content will be dynamically populated here -->
+                        <div id="certificates-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 timeline">
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4">Featured <span class="text-primary">Projects</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                        Selection of my best work showcasing my skills and expertise.
+                    </p>
+                </div>
+                
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projects content will be dynamically populated here -->
+                    <div class="skeleton-indicator-services">
+                        <sl-skeleton effect="pulse"></sl-skeleton>
+                    </div>
+                    <div class="skeleton-indicator-services">
+                        <sl-skeleton effect="pulse"></sl-skeleton>
+                    </div>
+                    <div class="skeleton-indicator-services">
+                        <sl-skeleton effect="pulse"></sl-skeleton>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-16 fade-in-section">
+                    <a href="#" target="_blank" class="profile-github inline-flex items-center text-primary font-medium px-6 py-3 border border-primary rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                        <i class="fab fa-github mr-3"></i> View More Projects on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gradient-to-r from-primary to-secondary" style="color: black;">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Get In <span class="text-blue-200">Touch</span></h2>
+                    <div class="w-20 h-1 bg-white mx-auto"></div>
+                    <p class="text-blue-100 mt-4 max-w-2xl mx-auto">
+                        Have a project in mind or want to discuss opportunities? I'd love to hear from you!
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="bg-white bg-opacity-90 p-8 rounded-xl shadow-lg fade-in-section">
+                        <h3 class="text-2xl font-semibold mb-8">Contact <span class="text-primary">Information</span></h3>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Location</h4>
+                                    <p class="text-gray-600 profile-location profile-address"></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600 profile-email"></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600 profile-phone"></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Working Hours</h4>
+                                    <p class="text-gray-600">Mon-Fri: 9AM - 6PM UTC+3</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-lg mb-4 text-gray-800">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class=" profile-github social-link bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="profile-linkedin social-link bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="profile-twitter social-link bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="profile-instagram social-link bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="profile-dribbble social-link bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                                <a href="#" class="profile-behance social-link bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-behance"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in-section">
+                        <div class="bg-white bg-opacity-90 p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-semibold mb-8">Send Me a <span class="text-primary">Message</span></h3>
+                            
+                            <form id="contact-form" action="https://formsubmit.co/your@email.com" method="POST" class="space-y-5">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="name" class="block mb-2 font-medium text-gray-800">Name</label>
+                                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="Your name">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block mb-2 font-medium text-gray-800">Email</label>
+                                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="Your email">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="subject" class="block mb-2 font-medium text-gray-800">Subject</label>
+                                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="Subject">
+                                </div>
+                                <div>
+                                    <label for="message" class="block mb-2 font-medium text-gray-800">Message</label>
+                                    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="Your message"></textarea>
+                                </div>
+                                <input type="hidden" name="_next" value="#home">
+                                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white px-6 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+                                    <i class="fas fa-paper-plane mr-2"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div id="newsletter" class="mt-8 p-6 bg-white bg-opacity-90 rounded-xl shadow-lg">
+                            <h4 class="font-bold text-lg mb-4 text-gray-800">Newsletter</h4>
+                            <p class="text-gray-600 mb-4">
+                                Subscribe to my newsletter to stay updated with my latest projects and articles.
+                            </p>
+                            <div class="flex">
+                                <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none">
+                                <button class="bg-primary text-white px-6 py-3 rounded-r-lg">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="text-2xl font-bold text-primary mb-4 profile-endpoint"></div>
+                    <p class="text-gray-400 mb-6">
+                        Creating digital experiences that matter. Focused on building modern, accessible web applications.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="profile-github social-link text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="profile-linkedin social-link text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="profile-twitter social-link text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="profile-instagram social-link text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="profile-dribbble social-link text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-dribbble text-xl"></i>
+                        </a>
+                        <a href="#" class="profile-behance social-link text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-behance text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div></div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-5">Navigation</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                        <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
+                        <li><a href="#experience" class="hover:text-white transition">Experience</a></li>
+                        <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div hidden>
+                    <h4 class="text-lg font-semibold mb-5">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition">UI/UX Design</a></li>
+                        <li><a href="#" class="hover:text-white transition">App Development</a></li>
+                        <li><a href="#" class="hover:text-white transition">Consulting</a></li>
+                        <li><a href="#" class="hover:text-white transition">Training</a></li>
+                    </ul>
+                </div>
+
+                
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-5">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1 text-primary"></i>
+                            <span class="profile-location"></span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span class="profile-email"></span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span class="profile-phone"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; <span class="profile-endpoint"></span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
 </html>
-

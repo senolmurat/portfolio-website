@@ -1,0 +1,203 @@
+{
+  "primaryColorTheme": "blue",
+  "endpoint": "senolmurat.dev",
+  "name": "Murat",
+  "surname": "Şenol",
+  "email": "murat.senol99@gmail.com",
+  "image": "https://media.licdn.com/dms/image/v2/D4D03AQGbEiG5WhLk6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1672684378089?e=1754524800&v=beta&t=a4T2FOIEa5ovyuQxTdeGiXVvM6iTAsVnusyerSGApmk",
+  "image_position": "right",
+  "location": "İstanbul, Turkey",
+  "address": "İstanbul-Kadıköy",
+  "phone": "+90 (535) 836-3969",
+  "languages": ["English", "Turkish"],
+  "degree": "Bachelor of Computer Science",
+  "title": "iOS Developer & Consultant",
+  "yearsOfExperience": "3",
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/senolmurat/",
+    "github": "https://github.com/senolmurat",
+    "dribbble": "",
+    "instagram": "",
+    "twitter": "",
+    "behance": ""
+  },
+  "skills": {
+    "subtitle": "Technologies and abilities I've mastered to build powerful mobile applications.",
+    "technicalSkills": [
+      "Swift / SwiftUI",
+      "UIKit",
+      "XCode",
+      "Clean Architecture"
+    ],
+    "professionalSkills": [
+      "UI/UX Design",
+      "Communication",
+      "Problem Solving",
+      "Team Player"
+    ],
+    "tools": [
+      {
+        "name": "iOS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
+      },
+      {
+        "name": "XCode",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg"
+      },
+      {
+        "name": "Swift",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+      },
+      {
+        "name": "Swift UI",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-plain.svg"
+      },
+      {
+        "name": "Firebase",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg"
+      },
+      {
+        "name": "HTML",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+      }
+    ]
+  },
+  "home": {
+    "description": "I'm a passionate iOS developer with a strong focus on creating user-friendly and efficient mobile applications. I'm dedicated to delivering high-quality code and innovative solutions to complex problems.",
+    "buttonText": "Download CV",
+    "buttonLink": "assets/pdf/cv.pdf",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQGbEiG5WhLk6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1672684378089?e=1754524800&v=beta&t=a4T2FOIEa5ovyuQxTdeGiXVvM6iTAsVnusyerSGApmk"
+  },
+  "about": {
+    "subtitle": "Get to know the person behind the code. My journey, passions, and what drives me as a developer.",
+    "description": "I'm a passionate iOS developer with a strong focus on creating user-friendly and efficient mobile applications. I'm dedicated to delivering high-quality code and innovative solutions to complex problems."
+  },
+  "services": {
+    "hidden": false,
+    "subtitle": "",
+    "services": [
+      {
+        "title": "App Development",
+        "description": "Custom mobile iOS app development using Swift and SwiftUI.",
+        "image": "fas fa-mobile-alt",
+        "detailLink": "#"
+      },
+      {
+        "title": "Code Assistance",
+        "description": "I can give assistance on your codebase, help you with your project, or provide guidance.",
+        "image": "fas fa-laptop-code",
+        "detailLink": "#"
+      }
+    ]
+  },
+  "work": {
+    "hidden": false,
+    "subtitle": "My professional journey through the years and valuable lessons learned.",
+    "career": [
+      {
+        "title": "iOS Developer",
+        "company": "OBSS",
+        "description": "As an iOS consultant at OBSS, I contributed to the development of the iOS mobile application for Albanian Bank BKT. My role involved collaborating with a talented team to create user-friendly features, ensuring seamless functionality using Swift-SwiftUI, and maintaining high standards through rigorous testing. This experience honed my skills in mobile app development and strengthened my problem-solving abilities.",
+        "skills": ["Swift", "SwiftUI", "UIKit", "Core Data"],
+        "dateStart": "04/2020",
+        "dateEnd": "Present"
+      },
+      {
+        "title": "Intern",
+        "company": "Platin Bilişim",
+        "description": "Holistics , SIEM Team, SOC Team , Blue Team , Red Team and observed how they work and operate.  Learned about Secure App & Web Development techniques and how to avoid certain security vulnerabilities , Logging & SIEM Programs (Splunk).",
+        "skills": ["Application Security", "Web Security", "Blue & Red Team", "SIEM Programs (Splunk)"],
+        "dateStart": "08/2021",
+        "dateEnd": "09/2021"
+      },
+      {
+        "title": "Intern",
+        "company": "Hugin Retail Solutions",
+        "description": "I worked on porting existing embedded systems (POS) software to Android and IOS using Java , C# and Microsoft's Xamarin Framework.",
+        "skills": ["Java", "C#", "Xamarin", "Android", "IOS"],
+        "dateStart": "07/2019",
+        "dateEnd": "08/2019"
+      }
+    ],
+    "education": [
+      {
+        "title": "Bachelor of Computer Science",
+        "institution": "Marmara University",
+        "description": "Graduated from Marmara University in 2021 with a degree in Computer Engineering, equipped with a strong foundation in Clean Code and Mofile App Development.",
+        "dateStart": "09/2017",
+        "dateEnd": "10/2021"
+      },
+      {
+        "title": "Bachelor of Computer Science",
+        "institution": "Warsaw University of Technology",
+        "description": "Erasmus+ Exchange Program",
+        "dateStart": "02/2020",
+        "dateEnd": "07/2020"
+      }
+    ],
+    "certificates": [
+      {
+        "title": "SwiftUI + SwiftData Masterclass - iOS App Development Swift",
+        "institution": "Udemy",
+        "description": "",
+        "link": "https://www.udemy.com/certificate/UC-6ae0101e-14ce-482d-a986-fb2a5ffe4a2e/",
+        "date": "10/2024"
+      },
+      {
+        "title": "SwiftUI - The Complete iOS 17 Reference Library of Code",
+        "institution": "Udemy",
+        "description": "",
+        "link": "https://www.udemy.com/certificate/UC-6bf61b25-4dc2-4303-82c0-a6d74e385a52/",
+        "date": "09/2024"
+      },
+      {
+        "title": "iOS & Swift - The Complete iOS App Development Bootcamp",
+        "institution": "Udemy",
+        "description": "",
+        "link": "https://ude.my/UC-235f41ca-35fc-4b1e-8e5f-9e6e802e1087",
+        "date": "09/2022"
+      },
+      {
+        "title": "Software Development Processes and Methodologies",
+        "institution": "Coursera",
+        "description": "",
+        "link": "https://www.coursera.org/account/accomplishments/certificate/TL3NBAP7JXA3",
+        "date": "04/2022"
+      }
+    ]
+  },
+  "projects": {
+    "hidden": false,
+    "subtitle": "Selection of my best work showcasing my skills and expertise.",
+    "projects": [
+      {
+        "title": "EasyProgressBar",
+        "description": "Simple customisable-animatable progress bar in SwiftUI for iOS",
+        "skills": ["Swift", "SwiftUI", "XCode", "SPM"],
+        "imageUrl": "assets/img/project_1.png",
+        "link": "https://github.com/senolmurat/EasyProgressBar"
+      },
+      {
+        "title": "SwiftColorAssetGen",
+        "description": "Swift script to generate asset colors from list of hex codes.",
+        "skills": ["Swift", "XCode", "Utility"],
+        "imageUrl": "assets/img/project_2.png",
+        "link": "https://github.com/senolmurat/SwiftColorAssetGen"
+      },
+      {
+        "title": "Web Lottie Viewer",
+        "description": "Web Lottie Viewer for All your lotties.",
+        "skills": ["HTML", "CSS", "JavaScript", "Lottie", "JSON"],
+        "imageUrl": "https://raw.githubusercontent.com/senolmurat/lottieviewer/main/resources/demo.gif",
+        "link": "https://github.com/senolmurat/lottieviewer"
+      }
+    ]
+  },
+  "contact": {
+    "newsletterHidden": true,
+    "subtitle": "Have a project in mind or want to discuss opportunities? I'd love to hear from you!"
+  },
+  "footer": {
+    "description": "I'm always open to new opportunities and collaborations. Feel free to reach out to me via email or connect with me on social media."
+  }
+} 
