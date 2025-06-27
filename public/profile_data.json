@@ -81,12 +81,6 @@
         "description": "Custom mobile iOS app development using Swift and SwiftUI.",
         "image": "fas fa-mobile-alt",
         "detailLink": "#"
-      },
-      {
-        "title": "Code Assistance",
-        "description": "I can give assistance on your codebase, help you with your project, or provide guidance.",
-        "image": "fas fa-laptop-code",
-        "detailLink": "#"
       }
     ]
   },
