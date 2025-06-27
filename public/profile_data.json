@@ -78,7 +78,7 @@
     "services": [
       {
         "title": "App Development",
-        "description": "Custom mobile iOS app development using Swift and SwiftUI.",
+        "description": "Mobile iOS app development using Swift and SwiftUI.",
         "image": "fas fa-mobile-alt",
         "detailLink": "#"
       }
